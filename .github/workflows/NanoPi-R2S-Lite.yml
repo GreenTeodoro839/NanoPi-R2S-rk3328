@@ -22,13 +22,14 @@ env:
   CONFIG_FILE: configs/lean/lean_stable.config
   DIY_SH: scripts/lean.sh
   KMODS_IN_FIRMWARE: true
+  UPLOAD_BIN_DIR: true
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
 
 jobs:
   Build:
-    runs-on: self-hosted
-    if: github.repository == 'DHDAXCW/NanoPi-R2S-rk3328'
+    runs-on: ubuntu-20.04
+#    if: github.repository == 'DHDAXCW/NanoPi-R2S-rk3328'
     outputs:
       OPENWRTROOT: ${{ steps.update.outputs.OPENWRTROOT }}
       PLATFORM: ${{ steps.compile.outputs.PLATFORM }}
