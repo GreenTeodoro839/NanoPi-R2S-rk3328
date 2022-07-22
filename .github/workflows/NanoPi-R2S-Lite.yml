@@ -29,6 +29,7 @@ env:
 jobs:
   Build:
     runs-on: ubuntu-20.04
+    timeout-minutes: 720
 #    if: github.repository == 'DHDAXCW/NanoPi-R2S-rk3328'
     outputs:
       OPENWRTROOT: ${{ steps.update.outputs.OPENWRTROOT }}
